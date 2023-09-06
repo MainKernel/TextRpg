@@ -1,4 +1,4 @@
-package org.fantasy.combatsystem;
+package org.fantasy.hero.types;
 
 public enum HeroType {
     RANGE,

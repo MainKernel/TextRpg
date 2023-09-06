@@ -1,4 +1,6 @@
-package org.fantasy.combatsystem;
+package org.fantasy.hero.skills;
+
+import org.fantasy.hero.types.HeroType;
 
 public abstract class Skills {
     private int skillExp;
@@ -6,7 +8,7 @@ public abstract class Skills {
     private int damage;
     private String name;
     private String description;
-    private String heroClass;
+    private HeroType heroType;
     private int chance;
 
 
@@ -55,19 +57,27 @@ public abstract class Skills {
         this.description = description;
     }
 
-    public String getHeroClass() {
-        return heroClass;
+    public HeroType getHeroType() {
+        return heroType;
     }
 
-    public void setHeroClass(String heroClass) {
-        this.heroClass = heroClass;
+    public void setHeroType(HeroType heroType) {
+        this.heroType = heroType;
+    }
+
+    public int getChance() {
+        return chance;
+    }
+
+    public void setChance(int chance) {
+        this.chance = chance;
     }
 
     @Override
     public String toString() {
         return "Skills{" +
                 "name= " + name +
-                ", heroClass='" + heroClass + '\'' +
+                ", heroClass='" + heroType + '\'' +
                 ", lvl=" + lvl +
                 ", damage=" + damage +
                 ", description='" + description + '\'' +

@@ -5,12 +5,13 @@ import org.fantasy.inventory.Rarity;
 import org.fantasy.tradingsystem.Money;
 
 public class Potion extends Item implements Consumables{
+
     public Potion(String name, Rarity rarity, Money money) {
         super(name, rarity, money);
     }
 
     @Override
-    public boolean isConsumable() {
-        return true;
+    public void consume() {
+
     }
 }

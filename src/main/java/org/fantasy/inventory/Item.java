@@ -2,10 +2,10 @@ package org.fantasy.inventory;
 
 import org.fantasy.tradingsystem.Money;
 
-public class Item {
+public abstract class Item {
     private String name;
-   private Rarity rarity;
-   private Money money;
+    private Rarity rarity;
+    private Money money;
 
     public Item(String name, Rarity rarity, Money money) {
         this.name = name;
@@ -25,15 +25,15 @@ public class Item {
         return rarity;
     }
 
-    public void setRarity(Rarity rarity) {
-        this.rarity = rarity;
-    }
-
-    public String getMoney() {
-        return "Gold: " + money.getGold() + " Silver: " + money.getSilver() + " Copper: " + money.getCopper();
+    public Money getMoney() {
+        return money;
     }
 
     public void setMoney(Money money) {
         this.money = money;
+    }
+
+    public void setRarity(Rarity rarity) {
+        this.rarity = rarity;
     }
 }
