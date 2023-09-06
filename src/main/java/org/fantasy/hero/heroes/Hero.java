@@ -15,8 +15,8 @@ public abstract class Hero {
     int level;
     int experience;
     int experienceForNextLvl;
-    int maxHealth;
-    int health;
+    int maxHealth = 100;
+    int health = 100;
     double protection;
     int strength;
     int dexterity;
@@ -30,40 +30,45 @@ public abstract class Hero {
     int damage;
 
     public abstract void lvlUp();
+
     public abstract void increaseBaseAttribute();
+
     public abstract void setExperience(int experience);
+
     public abstract int doDamage();
-    public void takeDamage(int damage){
+
+    public void takeDamage(int damage) {
         int overAllProtection = armor.getProtection();
         int incomingDamage = overAllProtection - damage;
-        if(damage > overAllProtection){
+        if (damage > overAllProtection) {
             this.health = health - (incomingDamage - overAllProtection);
         }
     }
 
     public void addMoney(Money money) {
-        if(this.money == null){
+        if (this.money == null) {
             this.money = money;
-        }else {
-        this.money.addMoney(money);
+        } else {
+            this.money.addMoney(money);
         }
     }
 
     public int takeMoney(Money money) {
-        if(this.money.subtractMoney(money)){
+        if (this.money.subtractMoney(money)) {
             return 1;
-        }else {
+        } else {
             return 0;
         }
     }
 
-    public void removeItem(Item item){
+    public void removeItem(Item item) {
         inventory.remove(item);
     }
 
     public void addItem(Item item) {
         inventory.add(item);
     }
+
     public List<Item> getInventory() {
         return inventory;
     }
@@ -111,6 +116,7 @@ public abstract class Hero {
     public String getName() {
         return name;
     }
+
     public int getLevel() {
         return level;
     }

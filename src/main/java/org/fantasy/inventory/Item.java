@@ -6,12 +6,8 @@ public abstract class Item {
     private String name;
     private Rarity rarity;
     private Money money;
+    private String description;
 
-    public Item(String name, Rarity rarity, Money money) {
-        this.name = name;
-        this.rarity = rarity;
-        this.money = money;
-    }
 
     public String getName() {
         return name;
@@ -35,5 +31,13 @@ public abstract class Item {
 
     public void setRarity(Rarity rarity) {
         this.rarity = rarity;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 }

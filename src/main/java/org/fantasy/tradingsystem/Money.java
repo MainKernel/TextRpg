@@ -75,8 +75,8 @@ public class Money {
 
     @Override
     public String toString() {
-        return   "gold " + gold +
+        return "gold " + gold +
                 ", silver " + silver +
-                ", copper " + copper ;
+                ", copper " + copper;
     }
 }

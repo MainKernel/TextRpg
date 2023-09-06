@@ -1,14 +1,9 @@
 package org.fantasy.tradingsystem.trader;
 
 import org.fantasy.hero.heroes.Hero;
-import org.fantasy.hero.heroes.melee.Samurai;
-import org.fantasy.hero.types.HeroType;
 import org.fantasy.inventory.Item;
-import org.fantasy.inventory.Rarity;
-import org.fantasy.inventory.weapon.Weapon;
 import org.fantasy.tradingsystem.Money;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Trader {
@@ -22,15 +17,24 @@ public class Trader {
 
     public void buy(Hero hero, Item item) {
         System.out.println(item.getName() + " successfully sold for " + item.getMoney().toString());
-        hero.addMoney(item.getMoney());
-        hero.removeItem(item);
+        if (this.money.subtractMoney(item.getMoney())) {
+            hero.addMoney(item.getMoney());
+            this.money.subtractMoney(item.getMoney());
+            hero.removeItem(item);
+            addItem(item);
+
+        } else {
+            System.out.println("Trader do not have enough money to by " + item.getName());
+        }
     }
 
     public void sell(Hero hero, Item item) {
         Money money = item.getMoney();
-        if(hero.takeMoney(money) == 1){
+        if (hero.takeMoney(money) == 1) {
+            this.money.addMoney(item.getMoney());
             System.out.println("You successfully buy " + item.getName() + " for " + money.toString());
             hero.addItem(item);
+            this.removeItem(item);
         } else {
             System.out.println("Not enough money");
         }
@@ -62,13 +66,13 @@ public class Trader {
     }
 
     public static void main(String[] args) {
-        Trader trader = new Trader(new ArrayList<Item>(), new Money(100, 90,90));
-        Samurai samurai = new Samurai();
-        Weapon weapon = new Weapon("Common sword", Rarity.COMMON, new Money(1, 0, 0), 10,
-                HeroType.MELEE, 1, 100);
-        trader.addItem(weapon);
-        samurai.addMoney(new Money(10,1,1));
-        trader.sell(samurai,weapon);
-        System.out.println(samurai.getMoney().toString());
+//        Trader trader = new Trader(new ArrayList<Item>(), new Money(100, 90, 90));
+//        Samurai samurai = new Samurai();
+////        Weapon weapon = new Weapon("Common sword", Rarity.COMMON, new Money(1, 0, 0), 10,
+////                HeroType.MELEE, 1, 100);
+//        trader.addItem(weapon);
+//        samurai.addMoney(new Money(10, 1, 1));
+//        trader.sell(samurai, weapon);
+//        System.out.println(samurai.getMoney().toString());
     }
 }

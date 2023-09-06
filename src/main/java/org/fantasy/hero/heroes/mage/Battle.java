@@ -1,4 +1,4 @@
 package org.fantasy.hero.heroes.mage;
 
-public class Battle extends Mage{
+public class Battle extends Mage {
 }

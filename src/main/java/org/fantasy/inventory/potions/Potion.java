@@ -1,17 +1,18 @@
 package org.fantasy.inventory.potions;
 
+import org.fantasy.hero.heroes.Hero;
 import org.fantasy.inventory.Item;
-import org.fantasy.inventory.Rarity;
-import org.fantasy.tradingsystem.Money;
 
-public class Potion extends Item implements Consumables{
+public class Potion extends Item {
+    int healHp;
+    int dexterity;
+    int strength;
+    int intelligence;
 
-    public Potion(String name, Rarity rarity, Money money) {
-        super(name, rarity, money);
-    }
-
-    @Override
-    public void consume() {
-
+    public void consume(Hero hero) {
+        hero.setHealth(Math.min(hero.getHealth() + healHp, hero.getMaxHealth()));
+        hero.setDexterity(hero.getDexterity() + this.dexterity);
+        hero.setStrength(hero.getStrength() + this.strength);
+        hero.setIntelligence(hero.getIntelligence() + this.intelligence);
     }
 }
