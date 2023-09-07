@@ -15,4 +15,6 @@ public class Potion extends Item {
         hero.setStrength(hero.getStrength() + this.strength);
         hero.setIntelligence(hero.getIntelligence() + this.intelligence);
     }
+
+
 }

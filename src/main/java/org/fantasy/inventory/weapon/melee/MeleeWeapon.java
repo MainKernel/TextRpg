@@ -6,7 +6,5 @@ import org.fantasy.inventory.weapon.Weapon;
 import org.fantasy.tradingsystem.Money;
 
 public class MeleeWeapon extends Weapon {
-    public MeleeWeapon(String name, Rarity rarity, Money money, int damage, HeroType heroType, int weaponLevel, int nextLevel) {
-        super(name, rarity, money, damage, heroType, weaponLevel, nextLevel);
-    }
+
 }
