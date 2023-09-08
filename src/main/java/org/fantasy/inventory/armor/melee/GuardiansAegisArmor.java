@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.melee;
 
-public class GuardiansAegisArmor {
+public class GuardiansAegisArmor extends MeleeArmor{
 }

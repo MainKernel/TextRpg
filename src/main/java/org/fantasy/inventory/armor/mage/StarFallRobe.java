@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.mage;
 
-public class StarFallRobe {
+public class StarFallRobe extends MageArmor{
 }

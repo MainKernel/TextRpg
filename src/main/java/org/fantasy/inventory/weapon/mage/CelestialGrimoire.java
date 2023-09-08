@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.mage;
 
-public class CelestialGrimoire {
+public class CelestialGrimoire extends MageWeapon{
 }

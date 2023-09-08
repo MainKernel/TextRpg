@@ -6,5 +6,7 @@ import org.fantasy.inventory.weapon.Weapon;
 import org.fantasy.tradingsystem.Money;
 
 public class RangeWeapon extends Weapon {
-
+    {
+        setHeroType(HeroType.RANGE);
+    }
 }

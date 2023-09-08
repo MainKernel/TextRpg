@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.range;
 
-public class ThunderclapRifle {
+public class ThunderclapRifle extends RangeWeapon{
 }

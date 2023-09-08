@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.melee;
 
-public class DeathsEmbrace {
+public class DeathsEmbrace extends MeleeWeapon{
 }

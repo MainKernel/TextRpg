@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.melee;
 
-public class VoidScythe {
+public class VoidScythe extends MeleeWeapon{
 }

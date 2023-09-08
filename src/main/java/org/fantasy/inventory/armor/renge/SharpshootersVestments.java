@@ -1,4 +1,5 @@
 package org.fantasy.inventory.armor.renge;
 
-public class SharpshootersVestments {
+
+public class SharpshootersVestments extends RangeArmor {
 }

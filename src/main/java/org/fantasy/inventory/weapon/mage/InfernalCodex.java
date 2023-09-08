@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.mage;
 
-public class InfernalCodex {
+public class InfernalCodex extends MageWeapon{
 }

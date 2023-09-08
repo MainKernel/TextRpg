@@ -1,4 +1,4 @@
 package org.fantasy.inventory.potions;
 
-public class PotionOfStrength {
+public class PotionOfStrength extends Potion{
 }

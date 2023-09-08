@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.melee;
 
-public class Stormbringer {
+public class Stormbringer extends MeleeWeapon{
 }

@@ -15,6 +15,5 @@ public class Widowmaker extends MeleeWeapon{
                 "\nof the Widowmaker is wrapped in supple, midnight-black leather for a secure " +
                 "\ngrip and adorned with ornate engravings depicting intricate spider motifs, " +
                 "\nhinting at its deadly intent");
-        setMoney(new Money(0,1,0));
     }
 }

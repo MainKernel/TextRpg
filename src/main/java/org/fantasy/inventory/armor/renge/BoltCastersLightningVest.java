@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.renge;
 
-public class BoltCastersLightningVest {
+public class BoltCastersLightningVest extends RangeArmor{
 }

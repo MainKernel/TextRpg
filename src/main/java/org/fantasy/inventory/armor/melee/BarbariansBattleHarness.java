@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.melee;
 
-public class BarbariansBattleHarness {
+public class BarbariansBattleHarness extends MeleeArmor{
 }

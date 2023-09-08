@@ -6,11 +6,19 @@ import org.fantasy.inventory.armor.Armor;
 import org.fantasy.inventory.Item;
 import org.fantasy.inventory.weapon.Weapon;
 import org.fantasy.tradingsystem.Money;
+import org.fantasy.world.locations.BaseLocation;
+import org.fantasy.world.locations.StartLocation;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Hero {
+    {
+        location = new StartLocation();
+    }
+
+    int playerX = 0;
+    int playerY = 0;
     String name;
     int level;
     int experience;
@@ -28,12 +36,19 @@ public abstract class Hero {
     Money money;
     HeroType heroType;
     int damage;
+    BaseLocation location;
 
     public abstract void lvlUp();
 
     public abstract void increaseBaseAttribute();
 
-    public abstract void setExperience(int experience);
+    public void addExp(int experience) {
+        if ((this.experience += experience) > experienceForNextLvl) {
+            lvlUp();
+        } else {
+            this.experience += experience;
+        }
+    }
 
     public abstract int doDamage();
 
@@ -171,5 +186,13 @@ public abstract class Hero {
 
     public HeroType getHeroType() {
         return heroType;
+    }
+
+    public BaseLocation getLocation() {
+        return location;
+    }
+
+    public void setLocation(BaseLocation location) {
+        this.location = location;
     }
 }

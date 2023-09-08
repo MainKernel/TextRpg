@@ -1,4 +1,4 @@
 package org.fantasy.inventory.potions;
 
-public class ElixirOfIntelligence {
+public class ElixirOfIntelligence extends Potion{
 }

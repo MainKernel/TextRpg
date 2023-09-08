@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.range;
 
-public class RangersRepeater {
+public class RangersRepeater extends RangeWeapon{
 }

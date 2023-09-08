@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.mage;
 
-public class FrostfireWand {
+public class FrostfireWand extends MageWeapon{
 }

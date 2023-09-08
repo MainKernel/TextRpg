@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.melee;
 
-public class WarriorsPlateMail {
+public class WarriorsPlateMail extends MeleeArmor{
 }

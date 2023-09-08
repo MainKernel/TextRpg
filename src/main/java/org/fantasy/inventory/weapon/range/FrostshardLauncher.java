@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.range;
 
-public class FrostshardLauncher {
+public class FrostshardLauncher extends RangeWeapon{
 }

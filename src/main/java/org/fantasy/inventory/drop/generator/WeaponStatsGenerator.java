@@ -7,12 +7,14 @@ import org.fantasy.inventory.weapon.melee.Widowmaker;
 
 public class WeaponStatsGenerator {
 
-    public void generateWeapon(Hero hero, Weapon weapon) {
+
+    public Weapon generateWeapon(Hero hero, Weapon weapon) {
         BaseGenerator baseGenerator = new BaseGenerator();
         weapon.setRarity(baseGenerator.generateRarity());
         weapon.setDamage(damageBasedOnHero(hero));
         weapon.setRequiredLevel(requiredLevel(hero));
         weapon.normalize();
+        return weapon;
     }
 
     private int damageBasedOnHero(Hero hero) {
@@ -30,7 +32,7 @@ public class WeaponStatsGenerator {
     public static void main(String[] args) {
         Samurai samurai = new Samurai();
         Widowmaker widowmaker = new Widowmaker();
-        samurai.setLevel(3);
+        samurai.setLevel(20);
         new WeaponStatsGenerator().generateWeapon(samurai,widowmaker);
         System.out.println(widowmaker);
     }

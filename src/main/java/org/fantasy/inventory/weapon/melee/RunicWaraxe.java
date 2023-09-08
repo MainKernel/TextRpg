@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.melee;
 
-public class RunicWaraxe {
+public class RunicWaraxe extends MeleeWeapon{
 }

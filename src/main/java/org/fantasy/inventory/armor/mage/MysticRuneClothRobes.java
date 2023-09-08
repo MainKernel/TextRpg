@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.mage;
 
-public class MysticRuneClothRobes {
+public class MysticRuneClothRobes extends MageArmor{
 }

@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.range;
 
-public class ShadowstalkerBow {
+public class ShadowstalkerBow extends RangeWeapon{
 }

@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.range;
 
-public class CelestialArbalest {
+public class CelestialArbalest extends RangeWeapon{
 }

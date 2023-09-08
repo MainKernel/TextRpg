@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.mage;
 
-public class DoomscrollTome {
+public class DoomscrollTome extends MageWeapon{
 }

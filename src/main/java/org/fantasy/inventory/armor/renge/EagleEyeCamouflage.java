@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.renge;
 
-public class EagleEyeCamouflage {
+public class EagleEyeCamouflage extends RangeArmor {
 }

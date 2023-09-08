@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.range;
 
-public class RapidfireBlunderbuss {
+public class RapidfireBlunderbuss extends RangeWeapon{
 }

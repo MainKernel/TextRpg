@@ -15,11 +15,6 @@ public class Range extends Hero {
     }
 
     @Override
-    public void setExperience(int experience) {
-
-    }
-
-    @Override
     public int doDamage() {
         return 0;
     }

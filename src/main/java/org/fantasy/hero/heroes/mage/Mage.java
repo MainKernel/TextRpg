@@ -13,10 +13,6 @@ public class Mage extends Hero{
 
     }
 
-    @Override
-    public void setExperience(int experience) {
-
-    }
 
     @Override
     public int doDamage() {

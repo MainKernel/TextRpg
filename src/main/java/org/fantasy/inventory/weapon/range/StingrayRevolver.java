@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.range;
 
-public class StingrayRevolver {
+public class StingrayRevolver extends RangeWeapon{
 }

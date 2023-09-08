@@ -5,9 +5,6 @@ import org.fantasy.inventory.Item;
 import org.fantasy.tradingsystem.Money;
 
 public class Weapon extends Item {
-    {
-        setMoney(new Money(0,0,0));
-    }
     private int damage;
     private HeroType heroType;
     private int weaponLevel = 1;

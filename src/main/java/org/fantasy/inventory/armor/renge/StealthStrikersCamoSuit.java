@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.renge;
 
-public class StealthStrikersCamoSuit {
+public class StealthStrikersCamoSuit extends RangeArmor{
 }

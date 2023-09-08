@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.renge;
 
-public class FrostarrowFrostcloak {
+public class FrostarrowFrostcloak extends RangeArmor{
 }

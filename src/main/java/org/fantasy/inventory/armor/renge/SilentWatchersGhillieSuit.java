@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.renge;
 
-public class SilentWatchersGhillieSuit {
+public class SilentWatchersGhillieSuit extends RangeArmor{
 }

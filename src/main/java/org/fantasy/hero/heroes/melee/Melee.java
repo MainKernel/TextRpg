@@ -13,10 +13,6 @@ public class Melee extends Hero {
 
     }
 
-    @Override
-    public void setExperience(int experience) {
-
-    }
 
     @Override
     public int doDamage() {

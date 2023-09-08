@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.mage;
 
-public class EtherealBlade {
+public class EtherealBlade extends MageWeapon{
 }

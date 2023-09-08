@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.melee;
 
-public class Excalibur {
+public class Excalibur extends MeleeWeapon{
 }

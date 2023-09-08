@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.melee;
 
-public class WarlordsMaul {
+public class WarlordsMaul extends MeleeWeapon{
 }

@@ -1,4 +1,4 @@
 package org.fantasy.inventory.armor.mage;
 
-public class AetherialSpellWeaver {
+public class AetherialSpellWeaver extends MageArmor{
 }

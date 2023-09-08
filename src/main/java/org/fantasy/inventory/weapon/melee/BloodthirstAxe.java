@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.melee;
 
-public class BloodthirstAxe {
+public class BloodthirstAxe extends MeleeWeapon{
 }

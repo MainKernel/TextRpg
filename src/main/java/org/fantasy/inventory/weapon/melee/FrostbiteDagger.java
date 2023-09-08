@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.melee;
 
-public class FrostbiteDagger {
+public class FrostbiteDagger extends MeleeWeapon{
 }

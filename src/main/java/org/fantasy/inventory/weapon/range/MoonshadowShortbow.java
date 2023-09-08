@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.range;
 
-public class MoonshadowShortbow {
+public class MoonshadowShortbow extends RangeWeapon {
 }

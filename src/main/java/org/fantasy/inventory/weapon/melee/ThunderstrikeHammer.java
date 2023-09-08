@@ -1,4 +1,4 @@
 package org.fantasy.inventory.weapon.melee;
 
-public class ThunderstrikeHammer {
+public class ThunderstrikeHammer extends MeleeWeapon{
 }

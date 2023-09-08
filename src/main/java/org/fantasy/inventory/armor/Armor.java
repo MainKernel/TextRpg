@@ -51,6 +51,7 @@ public class Armor extends Item {
         this.getMoney().setCopper((int) (this.getMoney().getCopper() * coefficient));
     }
 
+
     public void setProtection(int protection) {
         this.protection = protection;
     }
