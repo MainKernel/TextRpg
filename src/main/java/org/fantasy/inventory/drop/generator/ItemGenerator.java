@@ -17,27 +17,28 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ItemGenerator {
-    private List<Weapon> weapons;
-    private List<Armor> armors;
-    private List<Potion> potions;
-//    public ItemGenerator(Hero hero) {
-//
-//    }
+    private static List<Weapon> weapons;
+    private static List<Armor> armors;
+    private static List<Potion> potions;
+    static {
+        itemInit();
+    }
 
     public List<Weapon> getWeapons() {
         return weapons;
     }
 
-    public List<Weapon> generateWeapomList(Hero hero){
-        weaponInit();
+    public List<Weapon> generateWeapomList(Hero hero) {
+        itemInit();
         WeaponStatsGenerator weaponStatsGenerator = new WeaponStatsGenerator();
         List<Weapon> weaponList = new ArrayList<>();
-        for (Weapon w:weapons) {
-            weaponList.add(weaponStatsGenerator.generateWeapon(hero,w.copy()));
+        for (Weapon w : weapons) {
+            weaponList.add(weaponStatsGenerator.generateWeapon(hero, w.copy()));
         }
         return weaponList;
     }
-    public void weaponInit() {
+
+    public static void itemInit() {
 
         weapons = Arrays.asList(new AetherialStaff(), new ArcaneStaff(), new AstralScepter(), new CelestialGrimoire(),
                 new DoomscrollTome(), new DragonfireRod(), new EtherealBlade(), new FrostfireWand(), new InfernalCodex(),
@@ -58,7 +59,8 @@ public class ItemGenerator {
                 new GuardiansAegisArmor(), new MaraudersRaiderGear(), new PaladinsFaithfulPlate(),
                 new WarriorsPlateMail(), new BoltCastersLightningVest(), new EagleEyeCamouflage(),
                 new EaglesGazeScoutArmor(), new FrostarrowFrostcloak(), new MoonshadowScoutCloak(),
-                new SharpshootersVestments(), new SilentWatchersGhillieSuit(), new StealthStrikersCamoSuit());
+                new SharpshootersVestments(), new SilentWatchersGhillieSuit(), new StealthStrikersCamoSuit(),
+                new SamuraisShadowArmor());
 
         potions = Arrays.asList(new ElixirOfDexterity(), new ElixirOfHealing(), new ElixirOfIntelligence(),
                 new ElixirOfStrength(), new PotionOfDexterity(), new PotionOfHealing(), new PotionOfIntelligence(),
@@ -70,15 +72,15 @@ public class ItemGenerator {
         Samurai samurai = new Samurai();
         samurai.setLevel(1);
         List<Weapon> inventory = itemGenerator.generateWeapomList(samurai);
-        for (Weapon w:
-             inventory) {
+        for (Weapon w :
+                inventory) {
             System.out.println(w);
             System.out.println();
         }
 
         samurai.setLevel(20);
         inventory = itemGenerator.generateWeapomList(samurai);
-        for (Weapon w:
+        for (Weapon w :
                 inventory) {
             System.out.println(w);
             System.out.println();

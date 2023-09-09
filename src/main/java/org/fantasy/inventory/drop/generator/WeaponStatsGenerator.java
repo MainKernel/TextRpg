@@ -1,15 +1,13 @@
 package org.fantasy.inventory.drop.generator;
 
 import org.fantasy.hero.heroes.Hero;
-import org.fantasy.hero.heroes.melee.Samurai;
 import org.fantasy.inventory.weapon.Weapon;
-import org.fantasy.inventory.weapon.melee.Widowmaker;
 
 public class WeaponStatsGenerator {
 
 
     public Weapon generateWeapon(Hero hero, Weapon weapon) {
-        BaseGenerator baseGenerator = new BaseGenerator();
+        BaseGenerator baseGenerator = BaseGenerator.getInstance();
         weapon.setRarity(baseGenerator.generateRarity());
         weapon.setDamage(damageBasedOnHero(hero));
         weapon.setRequiredLevel(requiredLevel(hero));
@@ -29,11 +27,4 @@ public class WeaponStatsGenerator {
         return (int) Math.floor(x);
     }
 
-    public static void main(String[] args) {
-        Samurai samurai = new Samurai();
-        Widowmaker widowmaker = new Widowmaker();
-        samurai.setLevel(20);
-        new WeaponStatsGenerator().generateWeapon(samurai,widowmaker);
-        System.out.println(widowmaker);
-    }
 }

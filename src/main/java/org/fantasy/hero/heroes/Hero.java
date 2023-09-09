@@ -13,10 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Hero {
-    {
-        location = new StartLocation();
-    }
-
     int playerX = 0;
     int playerY = 0;
     String name;
@@ -38,9 +34,31 @@ public abstract class Hero {
     int damage;
     BaseLocation location;
 
+    {
+        location = new StartLocation();
+    }
+
     public abstract void lvlUp();
 
     public abstract void increaseBaseAttribute();
+
+    public abstract int doDamage();
+
+    public void equipWeapon(Weapon weapon) {
+        if (this.weapon != null) {
+            inventory.add(this.weapon);
+        }
+        inventory.remove(weapon);
+        this.weapon = weapon;
+    }
+
+    public void equipArmor(Armor armor) {
+        if (this.armor != null) {
+            inventory.add(this.armor);
+        }
+        inventory.remove(armor);
+        this.armor = armor;
+    }
 
     public void addExp(int experience) {
         if ((this.experience += experience) > experienceForNextLvl) {
@@ -49,8 +67,6 @@ public abstract class Hero {
             this.experience += experience;
         }
     }
-
-    public abstract int doDamage();
 
     public void takeDamage(int damage) {
         int overAllProtection = armor.getProtection();
@@ -88,52 +104,16 @@ public abstract class Hero {
         return inventory;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public void setExperienceForNextLvl(int experienceForNextLvl) {
-        this.experienceForNextLvl = experienceForNextLvl;
-    }
-
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public void setProtection(double protection) {
-        this.protection = protection;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public void setDexterity(int dexterity) {
-        this.dexterity = dexterity;
-    }
-
-    public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
-    }
-
-    public void setWeapon(Weapon weapon) {
-        this.weapon = weapon;
-    }
-
-    public void setArmor(Armor armor) {
-        this.armor = armor;
-    }
-
     public String getName() {
         return name;
     }
 
     public int getLevel() {
         return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public int getExperience() {
@@ -144,36 +124,72 @@ public abstract class Hero {
         return experienceForNextLvl;
     }
 
+    public void setExperienceForNextLvl(int experienceForNextLvl) {
+        this.experienceForNextLvl = experienceForNextLvl;
+    }
+
     public int getMaxHealth() {
         return maxHealth;
+    }
+
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
     }
 
     public int getHealth() {
         return health;
     }
 
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
     public double getProtection() {
         return protection;
+    }
+
+    public void setProtection(double protection) {
+        this.protection = protection;
     }
 
     public int getStrength() {
         return strength;
     }
 
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
     public int getDexterity() {
         return dexterity;
+    }
+
+    public void setDexterity(int dexterity) {
+        this.dexterity = dexterity;
     }
 
     public int getIntelligence() {
         return intelligence;
     }
 
+    public void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
+    }
+
     public Weapon getWeapon() {
         return weapon;
     }
 
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
     public Armor getArmor() {
         return armor;
+    }
+
+    public void setArmor(Armor armor) {
+        this.armor = armor;
     }
 
     public List<Skills> getSkills() {
