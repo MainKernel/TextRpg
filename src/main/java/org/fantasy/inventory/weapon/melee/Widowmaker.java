@@ -5,15 +5,22 @@ import org.fantasy.tradingsystem.Money;
 public class Widowmaker extends MeleeWeapon{
     {
         setName("WidowMaker");
-        setDescription("\nThe Widowmaker is a fearsome melee weapon known for " +
-                "\nits deadly precision and its association with shadowy assassins and " +
-                "\nskilled duellists. Crafted with meticulous care, it is as much a work " +
-                "\nof art as it is a tool of combat. This weapon is a sleek and slender " +
-                "\nblade, forged from a rare and darkened steel alloy that shimmers with a " +
-                "\nsubtle, almost eerie, luster. Its razor-sharp edge is honed to perfection, " +
-                "\ncapable of slicing through armor and adversaries with uncanny ease. The hilt " +
-                "\nof the Widowmaker is wrapped in supple, midnight-black leather for a secure " +
-                "\ngrip and adorned with ornate engravings depicting intricate spider motifs, " +
-                "\nhinting at its deadly intent");
+        setDescription("\nThe \"Widowmaker\" is a foreboding and notorious weapon, renowned for its deadly accuracy " +
+                "\nand the ability to eliminate targets with ruthless efficiency. Often associated with skilled " +
+                "\nmarksmen and covert operatives, it is a symbol of precision, stealth, and the capacity to " +
+                "\nstrike from the shadows. The weapon's design is both sleek and lethal, featuring a sleek and modern" +
+                "\nappearance that belies its deadly capabilities. It is often a high-caliber rifle, equipped with " +
+                "\nadvanced optics and silenced for covert operations. The weapon exudes an aura of secrecy and the " +
+                "\ndeadly accuracy of a professional marksman. Wielded by expert snipers, assassins, or those who " +
+                "\nexcel in long-range combat, the Widowmaker grants the power to eliminate targets with precision " +
+                "\nfrom a distance. It enables its bearer to take out adversaries with a single, well-placed shot, " +
+                "\nmaking it an ideal tool for covert assassinations and critical missions that require stealth and " +
+                "\nprecision. Legends surrounding the Widowmaker tell of sharpshooters who used its power to eliminate " +
+                "\nhigh-value targets, disrupt enemy operations, and disappear without a trace. It is said that those " +
+                "\nwho possess the rifle are entrusted with the responsibility of conducting covert missions that " +
+                "\nsafeguard their interests and protect their realm from hidden threats. The Widowmaker serves as a " +
+                "\nsymbol of deadly accuracy and the ability to eliminate threats with ruthless efficiency. Those who " +
+                "\nwield it are tasked with the solemn duty of eliminating adversaries who pose a grave danger to their " +
+                "\ncause or realm, all while embodying the precision and secrecy of a skilled marksman.");
     }
 }

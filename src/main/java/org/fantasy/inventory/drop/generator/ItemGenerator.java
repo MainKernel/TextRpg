@@ -24,12 +24,16 @@ public class ItemGenerator {
 //
 //    }
 
+    public List<Weapon> getWeapons() {
+        return weapons;
+    }
+
     public List<Weapon> generateWeapomList(Hero hero){
         weaponInit();
         WeaponStatsGenerator weaponStatsGenerator = new WeaponStatsGenerator();
         List<Weapon> weaponList = new ArrayList<>();
         for (Weapon w:weapons) {
-            weaponList.add(weaponStatsGenerator.generateWeapon(hero,w));
+            weaponList.add(weaponStatsGenerator.generateWeapon(hero,w.copy()));
         }
         return weaponList;
     }
@@ -64,10 +68,18 @@ public class ItemGenerator {
     public static void main(String[] args) {
         ItemGenerator itemGenerator = new ItemGenerator();
         Samurai samurai = new Samurai();
-        samurai.setLevel(3);
+        samurai.setLevel(1);
         List<Weapon> inventory = itemGenerator.generateWeapomList(samurai);
         for (Weapon w:
              inventory) {
+            System.out.println(w);
+            System.out.println();
+        }
+
+        samurai.setLevel(20);
+        inventory = itemGenerator.generateWeapomList(samurai);
+        for (Weapon w:
+                inventory) {
             System.out.println(w);
             System.out.println();
         }

@@ -2,8 +2,6 @@ package org.fantasy.inventory.armor;
 
 import org.fantasy.hero.types.HeroType;
 import org.fantasy.inventory.Item;
-import org.fantasy.inventory.Rarity;
-import org.fantasy.tradingsystem.Money;
 
 
 public class Armor extends Item {

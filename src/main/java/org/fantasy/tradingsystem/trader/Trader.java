@@ -7,12 +7,14 @@ import org.fantasy.tradingsystem.Money;
 import java.util.List;
 
 public class Trader {
+    {
+        setMoney(new Money(999999,99999,999999));
+    }
     private List<Item> items;
     private Money money;
 
-    public Trader(List<Item> items, Money money) {
+    public Trader(List<Item> items) {
         this.items = items;
-        this.money = money;
     }
 
     public void buy(Hero hero, Item item) {
@@ -24,7 +26,7 @@ public class Trader {
             addItem(item);
 
         } else {
-            System.out.println("Trader do not have enough money to by " + item.getName());
+            System.out.println("Trader do not have enough money to buy " + item.getName());
         }
     }
 
@@ -66,13 +68,6 @@ public class Trader {
     }
 
     public static void main(String[] args) {
-//        Trader trader = new Trader(new ArrayList<Item>(), new Money(100, 90, 90));
-//        Samurai samurai = new Samurai();
-////        Weapon weapon = new Weapon("Common sword", Rarity.COMMON, new Money(1, 0, 0), 10,
-////                HeroType.MELEE, 1, 100);
-//        trader.addItem(weapon);
-//        samurai.addMoney(new Money(10, 1, 1));
-//        trader.sell(samurai, weapon);
-//        System.out.println(samurai.getMoney().toString());
+
     }
 }

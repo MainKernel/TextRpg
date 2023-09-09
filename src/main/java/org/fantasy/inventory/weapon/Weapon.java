@@ -5,6 +5,9 @@ import org.fantasy.inventory.Item;
 import org.fantasy.tradingsystem.Money;
 
 public class Weapon extends Item {
+    {
+        setMoney(new Money(0,0,0));
+    }
     private int damage;
     private HeroType heroType;
     private int weaponLevel = 1;
@@ -73,6 +76,23 @@ public class Weapon extends Item {
         this.getMoney().setGold((int) (this.getMoney().getGold() * coefficient));
         this.getMoney().setSilver((int) (this.getMoney().getSilver() * coefficient));
         this.getMoney().setCopper((int) (this.getMoney().getCopper() * coefficient));
+    }
+
+    public Weapon() {
+
+    }
+
+    public Weapon copy() {
+        Weapon weapon = new Weapon();
+        weapon.setName(this.getName());
+        weapon.setHeroType(this.getHeroType());
+        weapon.setRarity(this.getRarity());
+        weapon.setDamage(this.getDamage());
+        weapon.setWeaponLevel(this.getWeaponLevel());
+        weapon.setRequiredLevel(this.getRequiredLevel());
+        weapon.setMoney(this.getMoney());
+        weapon.setDescription(this.getDescription());
+        return weapon;
     }
 
     public void setDamage(int damage) {
