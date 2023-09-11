@@ -40,10 +40,8 @@ public class BaseGenerator {
             return 3; // 10%
         } else if (chance < 0.3) {
             return 2; // 30%
-        } else if (chance < 0.5) {
-            return 1; // 50%
         } else {
-            return 0;
+            return 1; // 50%
         }
     }
 

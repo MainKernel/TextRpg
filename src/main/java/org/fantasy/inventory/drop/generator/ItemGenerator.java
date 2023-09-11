@@ -2,6 +2,7 @@ package org.fantasy.inventory.drop.generator;
 
 import org.fantasy.hero.heroes.Hero;
 import org.fantasy.hero.heroes.melee.Samurai;
+import org.fantasy.inventory.Item;
 import org.fantasy.inventory.armor.Armor;
 import org.fantasy.inventory.armor.mage.*;
 import org.fantasy.inventory.armor.melee.*;
@@ -11,6 +12,7 @@ import org.fantasy.inventory.weapon.Weapon;
 import org.fantasy.inventory.weapon.mage.*;
 import org.fantasy.inventory.weapon.melee.*;
 import org.fantasy.inventory.weapon.range.*;
+import org.fantasy.tradingsystem.Money;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,19 +27,39 @@ public class ItemGenerator {
         itemInit();
     }
 
-    public List<Weapon> getWeapons() {
-        return weapons;
-    }
+    public List<Item> inventoryGenerator(Hero hero, int items) {
+        List<Item> inventory = new ArrayList<>();
+        for (int i = 0; i < items; i++) {
+            int j = (int) (0 * (1.0 - (Math.random() / Math.nextDown(1.0)))
+                    + 4 * (Math.random() / Math.nextDown(1.0)));
 
+            switch (j){
+                case 0:
+                   inventory.add(generateArmor(hero).get((int) (0 * (1.0 - (Math.random() / Math.nextDown(1.0)))
+                            + armors.size() * (Math.random() / Math.nextDown(1.0)))));
+                    break;
+                case 1:
+                    inventory.add(generateWeapomList(hero).get((int) (0 * (1.0 - (Math.random() / Math.nextDown(1.0)))
+                            + weapons.size() * (Math.random() / Math.nextDown(1.0)))));
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+                    i--;
+                    break;
+            }
+        }
+        return inventory;
+    }
     public List<Weapon> generateWeapomList(Hero hero) {
-        WeaponStatsGenerator weaponStatsGenerator = new WeaponStatsGenerator();
+        WeaponGenerator weaponStatsGenerator = new WeaponGenerator();
         List<Weapon> weaponList = new ArrayList<>();
         for (Weapon w : weapons) {
             weaponList.add(weaponStatsGenerator.generateWeapon(hero, w.copy()));
         }
         return weaponList;
     }
-
     public List<Potion> generatePotionList(Hero hero) {
         PotionGenerator potionGenerator = new PotionGenerator();
         List <Potion> newPotionList = new ArrayList<>();
@@ -46,17 +68,14 @@ public class ItemGenerator {
         }
         return newPotionList;
     }
-
     public List<Armor> generateArmor(Hero hero) {
-        ArmorStatsGenerator statsGenerator = new ArmorStatsGenerator();
+        ArmorGenerator statsGenerator = new ArmorGenerator();
         List<Armor> newArmorList = new ArrayList<>();
         for (Armor a : armors) {
             newArmorList.add(statsGenerator.getArmor(hero, a.copy()));
         }
         return newArmorList;
     }
-
-
     public static void itemInit() {
 
         weapons = Arrays.asList(new AetherialStaff(), new ArcaneStaff(), new AstralScepter(), new CelestialGrimoire(),
@@ -86,14 +105,31 @@ public class ItemGenerator {
                 new PotionOfStrength());
     }
 
+    public Money genMoney(Hero hero, String rewardSize) {
+        return null;
+    }
+
+    public int genHeroExp(String rewardSize) {
+        return 0;
+    }
+
+    public int genWeaponExp(String rewardSize) {
+        return 0;
+    }
+
+    public int genArmorExp(String rewardSize) {
+        return 0;
+    }
+
     public static void main(String[] args) {
         ItemGenerator itemGenerator = new ItemGenerator();
         Samurai samurai = new Samurai();
         samurai.setLevel(3);
-        List<Armor> armors1 = itemGenerator.generateArmor(samurai);
-        for (Armor ar:
+        List<Item> armors1 = itemGenerator.inventoryGenerator(samurai, 20);
+        for (Item i:
              armors1) {
-            System.out.println(ar);
+            System.out.println(i);
+            System.out.println("--------------------------------------");
         }
     }
 

@@ -40,4 +40,5 @@ public abstract class Item {
     public String getDescription() {
         return this.description;
     }
+
 }

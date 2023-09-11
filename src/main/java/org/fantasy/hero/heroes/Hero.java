@@ -44,6 +44,14 @@ public abstract class Hero {
 
     public abstract int doDamage();
 
+    public void takeDamage(int damage) {
+        int overAllProtection = armor.getProtection();
+        int incomingDamage = overAllProtection - damage;
+        if (damage > overAllProtection) {
+            this.health = health - (incomingDamage - overAllProtection);
+        }
+    }
+
     public void equipWeapon(Weapon weapon) {
         if (this.weapon != null & getHeroType().equals(weapon.getHeroType())) {
             inventory.add(this.weapon);
@@ -76,14 +84,6 @@ public abstract class Hero {
             lvlUp();
         } else {
             this.experience += experience;
-        }
-    }
-
-    public void takeDamage(int damage) {
-        int overAllProtection = armor.getProtection();
-        int incomingDamage = overAllProtection - damage;
-        if (damage > overAllProtection) {
-            this.health = health - (incomingDamage - overAllProtection);
         }
     }
 

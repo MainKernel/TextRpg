@@ -107,4 +107,7 @@ public class Armor extends Item {
                 ", rarity= " + getRarity() +
                 '}';
     }
+    public void gainXp(int armourExperience) {
+
+    }
 }
