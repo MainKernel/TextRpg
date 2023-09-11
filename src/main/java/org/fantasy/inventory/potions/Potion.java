@@ -2,8 +2,12 @@ package org.fantasy.inventory.potions;
 
 import org.fantasy.hero.heroes.Hero;
 import org.fantasy.inventory.Item;
+import org.fantasy.inventory.Rarity;
 
 public class Potion extends Item {
+    {
+        setRarity(Rarity.COMMON);
+    }
     private int healHp;
     private int dexterity;
     private int strength;
@@ -55,5 +59,17 @@ public class Potion extends Item {
 
     public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
+    }
+
+    @Override
+    public String toString() {
+        return "Potion{" +
+                "name = " + getName() +
+                ", healHp= " + healHp +
+                ", dexterity=" + dexterity +
+                ", strength=" + strength +
+                ", intelligence=" + intelligence +
+                ", Potion rarity=" + getRarity()+
+                '}';
     }
 }

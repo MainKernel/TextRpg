@@ -45,19 +45,30 @@ public abstract class Hero {
     public abstract int doDamage();
 
     public void equipWeapon(Weapon weapon) {
-        if (this.weapon != null) {
+        if (this.weapon != null & getHeroType().equals(weapon.getHeroType())) {
             inventory.add(this.weapon);
+            inventory.remove(weapon);
+            this.weapon = weapon;
+        } else if (this.weapon == null & getHeroType().equals(weapon.getHeroType())) {
+            inventory.remove(weapon);
+            this.weapon = weapon;
+        }else {
+            System.out.println("This weapon is not suitable for your class");
         }
-        inventory.remove(weapon);
-        this.weapon = weapon;
+
     }
 
     public void equipArmor(Armor armor) {
-        if (this.armor != null) {
+        if (this.armor != null & getHeroType().equals(armor.getHeroType())) {
             inventory.add(this.armor);
+            inventory.remove(armor);
+            this.armor = armor;
+        } else if (this.armor == null & getHeroType().equals(armor.getHeroType())) {
+            inventory.remove(armor);
+            this.armor = armor;
+        }else {
+            System.out.println("This armor is not suitable for your class");
         }
-        inventory.remove(armor);
-        this.armor = armor;
     }
 
     public void addExp(int experience) {

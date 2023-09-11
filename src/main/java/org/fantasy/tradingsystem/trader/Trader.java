@@ -68,6 +68,5 @@ public class Trader {
     }
 
     public static void main(String[] args) {
-
     }
 }

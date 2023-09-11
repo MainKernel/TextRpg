@@ -20,6 +20,7 @@ public class ItemGenerator {
     private static List<Weapon> weapons;
     private static List<Armor> armors;
     private static List<Potion> potions;
+
     static {
         itemInit();
     }
@@ -29,7 +30,6 @@ public class ItemGenerator {
     }
 
     public List<Weapon> generateWeapomList(Hero hero) {
-        itemInit();
         WeaponStatsGenerator weaponStatsGenerator = new WeaponStatsGenerator();
         List<Weapon> weaponList = new ArrayList<>();
         for (Weapon w : weapons) {
@@ -37,6 +37,25 @@ public class ItemGenerator {
         }
         return weaponList;
     }
+
+    public List<Potion> generatePotionList(Hero hero) {
+        PotionGenerator potionGenerator = new PotionGenerator();
+        List <Potion> newPotionList = new ArrayList<>();
+        for (Potion p : potions) {
+            newPotionList.add(potionGenerator.generatePotion(hero, p.copy()));
+        }
+        return newPotionList;
+    }
+
+    public List<Armor> generateArmor(Hero hero) {
+        ArmorStatsGenerator statsGenerator = new ArmorStatsGenerator();
+        List<Armor> newArmorList = new ArrayList<>();
+        for (Armor a : armors) {
+            newArmorList.add(statsGenerator.getArmor(hero, a.copy()));
+        }
+        return newArmorList;
+    }
+
 
     public static void itemInit() {
 
@@ -70,20 +89,11 @@ public class ItemGenerator {
     public static void main(String[] args) {
         ItemGenerator itemGenerator = new ItemGenerator();
         Samurai samurai = new Samurai();
-        samurai.setLevel(1);
-        List<Weapon> inventory = itemGenerator.generateWeapomList(samurai);
-        for (Weapon w :
-                inventory) {
-            System.out.println(w);
-            System.out.println();
-        }
-
-        samurai.setLevel(20);
-        inventory = itemGenerator.generateWeapomList(samurai);
-        for (Weapon w :
-                inventory) {
-            System.out.println(w);
-            System.out.println();
+        samurai.setLevel(3);
+        List<Armor> armors1 = itemGenerator.generateArmor(samurai);
+        for (Armor ar:
+             armors1) {
+            System.out.println(ar);
         }
     }
 

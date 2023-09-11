@@ -2,7 +2,7 @@ package org.fantasy.inventory.potions;
 
 public class ElixirOfHealing extends Potion{
     {
-        setName("\nElixir of Healing");
+        setName("Elixir of Healing");
         setDescription("\nThe Elixir of Healing is a precious and sought-after potion known " +
                 "\nfor its remarkable ability to mend wounds, cure ailments, and restore " +
                 "\nvitality. Crafted by skilled alchemists and healers, it is a symbol of " +

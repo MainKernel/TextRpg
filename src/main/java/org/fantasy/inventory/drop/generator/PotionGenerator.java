@@ -1,62 +1,66 @@
 package org.fantasy.inventory.drop.generator;
 
 import org.fantasy.hero.heroes.Hero;
+import org.fantasy.hero.heroes.melee.Samurai;
+import org.fantasy.inventory.Rarity;
+import org.fantasy.inventory.potions.ElixirOfHealing;
 import org.fantasy.inventory.potions.Potion;
 
 public class PotionGenerator {
-    BaseGenerator baseGenerator = BaseGenerator.getInstance();
 
     public Potion generatePotion(Hero hero, Potion potion) {
-        potion.setRarity(baseGenerator.generateRarity());
+
         if (potion.getName().contains("Elixir")) {
-            return elixirStatsGenerator(hero, potion);
+           return elixirStatsGenerator(hero, potion);
         } else {
             return potionStatsGenerator(hero, potion);
         }
-
     }
 
     private Potion elixirStatsGenerator(Hero hero, Potion potion) {
-        Potion newPotion = potion.copy();
         switch (potion.getName()) {
-            case "ElixirOfDexterity":
-                potion.setDexterity(baseGenerator.elixirGenerator());
+            case "Elixir of Dexterity":
+                potion.setDexterity(BaseGenerator.getInstance().elixirGenerator());
                 break;
-            case "ElixirOfHealing":
+            case "Elixir of Healing":
                 potion.setHealHp((int)(hero.getMaxHealth() * 0.75));
                 break;
-            case "ElixirOfIntelligence":
-                potion.setIntelligence(baseGenerator.elixirGenerator());
+            case "Elixir of Intelligence":
+                potion.setIntelligence(BaseGenerator.getInstance().elixirGenerator());
                 break;
-            case "ElixirOfStrength":
-                potion.setStrength(baseGenerator.elixirGenerator());
+            case "Elixir of Strength":
+                potion.setStrength(BaseGenerator.getInstance().elixirGenerator());
                 break;
             default:
                 break;
         }
-        return newPotion;
+        return potion;
     }
 
     private Potion potionStatsGenerator(Hero hero, Potion potion) {
-        Potion newPotion = potion.copy();
         switch (potion.getName()) {
-            case "PotionOfDexterity":
-                potion.setDexterity(baseGenerator.elixirGenerator() > 1 ? 1 : 2);
+            case "Potion of Dexterity":
+                potion.setDexterity(BaseGenerator.getInstance().elixirGenerator() > 1 ? 1 : 2);
                 break;
-            case "PotionOfHealing":
-                potion.setHealHp((int)(hero.getMaxHealth() * 0.50));
+            case "Potion of Healing":
+                potion.setHealHp((int)(hero.getMaxHealth() * 0.40));
                 break;
-            case "PotionOfIntelligence":
-                potion.setIntelligence(baseGenerator.elixirGenerator() > 1 ? 1 : 2);
+            case "Potion of Intelligence":
+                potion.setIntelligence(BaseGenerator.getInstance().elixirGenerator() > 1 ? 1 : 2);
                 break;
-            case "PotionOfStrength":
-                potion.setStrength(baseGenerator.elixirGenerator() > 1 ? 1 : 2);
-                break;
-            default:
+            case "Potion of Strength":
+                potion.setStrength(BaseGenerator.getInstance().elixirGenerator() > 1 ? 1 : 2);
                 break;
         }
-        return newPotion;
+        return potion;
     }
 
-
+    public static void main(String[] args) {
+        Potion potion = new ElixirOfHealing();
+        Samurai samurai = new Samurai();
+        PotionGenerator potionGenerator = new PotionGenerator();
+        for (int i = 0; i < 20; i++) {
+            System.out.println(potionGenerator.generatePotion(samurai, potion));
+        }
+    }
 }
