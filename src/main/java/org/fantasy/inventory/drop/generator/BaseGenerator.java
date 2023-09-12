@@ -19,11 +19,6 @@ public class BaseGenerator {
         return Math.random();
     }
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 20; i++) {
-            System.out.println(BaseGenerator.getInstance().eventRarityGenerator());
-        }
-    }
 
     public int eventRarityGenerator() {
         double chance = getChance();
@@ -31,6 +26,58 @@ public class BaseGenerator {
             return 1; // 50%
         } else {
             return 0;
+        }
+    }
+
+    public int smallGoldAmountGenerator() {
+        double chance = getChance();
+        if (chance < 0.3) {
+            return 3;
+        } else if (chance < 0.4) {
+            return 2;
+        } else if (chance < 0.5) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public int smallSilverAndCopperAmountGenerator() {
+        double chance = getChance();
+        if (chance < 0.3) {
+            return 2;
+        } else if (chance < 0.4) {
+            return 3;
+        } else if (chance < 0.6) {
+            return 5;
+        } else {
+            return 1;
+        }
+    }
+
+    public int largeGoldAmountGenerator() {
+        double chance = getChance();
+        if (chance < 0.1) {
+            return 10;
+        } else if (chance < 0.2) {
+            return 15;
+        } else if (chance < 0.3) {
+            return 20;
+        } else {
+            return 5;
+        }
+    }
+
+    public int largeSilverAndCopperAmountGenerator() {
+        double chance = getChance();
+        if (chance < 0.3) {
+            return 10;
+        } else if (chance < 0.4) {
+            return 8;
+        } else if (chance < 0.5) {
+            return 7;
+        } else {
+            return 5;
         }
     }
 
@@ -44,8 +91,6 @@ public class BaseGenerator {
             return 1; // 50%
         }
     }
-
-
 
     public Rarity generateRarity() {
         double chance = getChance();

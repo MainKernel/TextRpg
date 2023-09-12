@@ -1,21 +1,11 @@
 package org.fantasy.hero.heroes.range;
 
 import org.fantasy.hero.heroes.Hero;
+import org.fantasy.hero.types.HeroType;
 
 public class Range extends Hero {
-
-    @Override
-    public void lvlUp() {
-
+    {
+        setHeroType(HeroType.RANGE);
     }
 
-    @Override
-    public void increaseBaseAttribute() {
-
-    }
-
-    @Override
-    public int doDamage() {
-        return 0;
-    }
 }

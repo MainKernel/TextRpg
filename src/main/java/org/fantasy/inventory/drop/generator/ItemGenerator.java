@@ -105,20 +105,46 @@ public class ItemGenerator {
                 new PotionOfStrength());
     }
 
-    public Money genMoney(Hero hero, String rewardSize) {
-        return null;
+    public Money genMoney(String rewardSize) {
+        BaseGenerator bg = BaseGenerator.getInstance();
+        Money money;
+        if (rewardSize.equals("largeReward")) {
+            money = new Money(bg.largeGoldAmountGenerator(),
+                    bg.largeSilverAndCopperAmountGenerator(),
+                    bg.largeSilverAndCopperAmountGenerator());
+        } else {
+            money = new Money(bg.smallGoldAmountGenerator(),
+                    bg.smallSilverAndCopperAmountGenerator(),
+                    bg.smallSilverAndCopperAmountGenerator());
+        }
+        return money;
     }
 
-    public int genHeroExp(String rewardSize) {
-        return 0;
+    public int genHeroExp(Hero hero, String rewardSize) {
+        if (rewardSize.equals("largeReward")) {
+            return (int) (hero.getExperienceForNextLvl() / 10 * (1 * (1.0 - (Math.random() / Math.nextDown(1.0)))
+                    + 2.0 * (Math.random() / Math.nextDown(1.0))));
+        } else {
+            return hero.getExperienceForNextLvl() % 10;
+        }
     }
 
-    public int genWeaponExp(String rewardSize) {
-        return 0;
+    public int genWeaponExp(Hero hero, String rewardSize) {
+        if (rewardSize.equals("largeReward")) {
+            return (int) (hero.getWeapon().getNextLvlXp() % 10 / (1 * (1.0 - (Math.random() / Math.nextDown(1.0)))
+                    + 2.0 * (Math.random() / Math.nextDown(1.0))));
+        } else {
+            return hero.getWeapon().getNextLvlXp() % 10;
+        }
     }
 
-    public int genArmorExp(String rewardSize) {
-        return 0;
+    public int genArmorExp(Hero hero, String rewardSize) {
+        if (rewardSize.equals("largeReward")) {
+            return (int) (hero.getArmor().getExperienceForNextLevel() / 10 * (1 * (1.0 - (Math.random() / Math.nextDown(1.0)))
+                    + 2.0 * (Math.random() / Math.nextDown(1.0))));
+        } else {
+            return hero.getArmor().getExperienceForNextLevel() % 10;
+        }
     }
 
     public static void main(String[] args) {

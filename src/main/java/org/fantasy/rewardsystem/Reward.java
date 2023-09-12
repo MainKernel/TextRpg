@@ -30,10 +30,10 @@ public class Reward {
         ItemGenerator generator = new ItemGenerator();
         Reward reward = new Reward();
         reward.setReward(generator.inventoryGenerator(hero, smallReward()));
-        reward.setMoney(generator.genMoney(hero, "smallReward"));
-        reward.setHeroExperience(generator.genHeroExp("smallReward"));
-        reward.setWeaponExperience(generator.genWeaponExp("smallReward"));
-        reward.setArmourExperience(generator.genArmorExp("smallReward"));
+        reward.setMoney(generator.genMoney("smallReward"));
+        reward.setHeroExperience(generator.genHeroExp(hero, "smallReward"));
+        reward.setWeaponExperience(generator.genWeaponExp(hero, "smallReward"));
+        reward.setArmourExperience(generator.genArmorExp(hero, "smallReward"));
         return reward;
     }
 
@@ -41,10 +41,10 @@ public class Reward {
         ItemGenerator generator = new ItemGenerator();
         Reward reward = new Reward();
         reward.setReward(generator.inventoryGenerator(hero, largeReward()));
-        reward.setMoney(generator.genMoney(hero, "largeReward"));
-        reward.setHeroExperience(generator.genHeroExp("largeReward"));
-        reward.setWeaponExperience(generator.genWeaponExp("largeReward"));
-        reward.setArmourExperience(generator.genArmorExp("largeReward"));
+        reward.setMoney(generator.genMoney("largeReward"));
+        reward.setHeroExperience(generator.genHeroExp(hero, "largeReward"));
+        reward.setWeaponExperience(generator.genWeaponExp(hero, "largeReward"));
+        reward.setArmourExperience(generator.genArmorExp(hero, "largeReward"));
         return reward;
     }
 
@@ -61,18 +61,20 @@ public class Reward {
 
     @Override
     public String toString() {
-        return "money=" + money.toString() +
-                "\nreward=" + listReward() +
-                "\nheroExperience=" + heroExperience +
-                "\nweaponExperience=" + weaponExperience +
-                "\narmor experience= " + armourExperience;
+        return "money: " + money.toString() +
+                "\nreward: " + listReward() +
+                "\nheroExperience: " + heroExperience +
+                "\nweaponExperience: " + weaponExperience +
+                "\narmor experience: " + armourExperience;
     }
 
     private String listReward() {
         StringBuilder sb = new StringBuilder();
         for (Item i : reward
         ) {
+            sb.append("\n");
             sb.append(i);
+            sb.append("\n");
             sb.append("---------------");
         }
         return sb.toString();

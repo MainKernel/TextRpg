@@ -19,10 +19,10 @@ public class BaseLocation {
     private Dungeon dungeon;
 
     private void generateVillage() {
-        if(BaseGenerator.getInstance().eventRarityGenerator() == 1){
+        if (BaseGenerator.getInstance().eventRarityGenerator() == 1) {
             village = new Village();
         }
-        if (BaseGenerator.getInstance().eventRarityGenerator() == 1){
+        if (BaseGenerator.getInstance().eventRarityGenerator() == 1) {
             dungeon = new Dungeon();
         }
     }

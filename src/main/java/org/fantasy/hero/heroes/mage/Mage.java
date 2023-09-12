@@ -1,21 +1,13 @@
 package org.fantasy.hero.heroes.mage;
 
 import org.fantasy.hero.heroes.Hero;
+import org.fantasy.hero.types.HeroType;
+import org.fantasy.inventory.weapon.Weapon;
+import org.fantasy.inventory.weapon.mage.SorceryStaff;
 
 public class Mage extends Hero{
-    @Override
-    public void lvlUp() {
-
+    {
+        setHeroType(HeroType.MAGE);
     }
 
-    @Override
-    public void increaseBaseAttribute() {
-
-    }
-
-
-    @Override
-    public int doDamage() {
-        return 0;
-    }
 }

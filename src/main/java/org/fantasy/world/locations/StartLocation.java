@@ -1,5 +1,8 @@
 package org.fantasy.world.locations;
 
+import org.fantasy.world.dungeon.Dungeon;
+import org.fantasy.world.village.Village;
+
 public class StartLocation extends BaseLocation{
     {
         setLocationX(0);
@@ -19,6 +22,7 @@ public class StartLocation extends BaseLocation{
                 "\nThe Beginner's Sanctuary is not just a place to begin one's quest but " +
                 "\nalso a place to find companionship, wisdom, and the promise of adventure " +
                 "\nin the vast, uncharted world beyond.");
-
+        setVillage(new Village());
+        setDungeon(new Dungeon());
     }
 }

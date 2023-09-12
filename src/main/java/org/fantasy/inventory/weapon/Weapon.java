@@ -2,19 +2,21 @@ package org.fantasy.inventory.weapon;
 
 import org.fantasy.hero.types.HeroType;
 import org.fantasy.inventory.Item;
+import org.fantasy.inventory.Rarity;
 import org.fantasy.tradingsystem.Money;
 
 public class Weapon extends Item {
     {
         setMoney(new Money(0,0,0));
+        setRarity(Rarity.COMMON);
     }
-    private int damage;
+    private int damage = 10;
     private HeroType heroType;
     private int weaponLevel = 1;
     private int weaponXp = 0;
     private int nextLvlXp = 100;
 
-    private int requiredLevel;
+    private int requiredLevel = 1;
 
     public void normalize() {
         switch (this.getRarity()) {

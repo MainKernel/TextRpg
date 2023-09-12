@@ -2,16 +2,19 @@ package org.fantasy.inventory.armor;
 
 import org.fantasy.hero.types.HeroType;
 import org.fantasy.inventory.Item;
+import org.fantasy.inventory.Rarity;
 import org.fantasy.tradingsystem.Money;
 
 
 public class Armor extends Item {
-    private int protection;
-    private int requiredLevel;
+    private int protection = 1;
+    private int requiredLevel = 1;
+    private int experienceForNextLevel = 100;
     private HeroType heroType;
 
     {
         setMoney(new Money(1, 1, 1));
+        setRarity(Rarity.COMMON);
     }
 
     public void normalize() {
@@ -97,15 +100,23 @@ public class Armor extends Item {
         this.requiredLevel = requiredLevel;
     }
 
+    public int getExperienceForNextLevel() {
+        return experienceForNextLevel;
+    }
+
+    public void setExperienceForNextLevel(int experienceForNextLevel) {
+        this.experienceForNextLevel = experienceForNextLevel;
+    }
+
     @Override
     public String toString() {
-        return "Armor{" +
-                "protection=" + protection +
-                ", requiredLevel=" + requiredLevel +
-                ", heroType=" + heroType +
-                ", cost=" + getMoney().toString() +
-                ", rarity= " + getRarity() +
-                '}';
+        return "\nname: " + getName() +
+                "\nprotection: " + protection +
+                "\nrequiredLevel: " + requiredLevel +
+                "\nheroType: " + heroType +
+                "\ncost: " + getMoney().toString() +
+                "\nrarity: " + getRarity() +
+                "\ncoast: " + getMoney().toString();
     }
     public void gainXp(int armourExperience) {
 
