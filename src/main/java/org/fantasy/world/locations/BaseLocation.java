@@ -2,6 +2,7 @@ package org.fantasy.world.locations;
 
 
 import org.fantasy.enemy.Enemy;
+import org.fantasy.hero.heroes.Hero;
 import org.fantasy.inventory.drop.generator.BaseGenerator;
 import org.fantasy.world.dungeon.Dungeon;
 import org.fantasy.world.village.Village;
@@ -17,6 +18,7 @@ public class BaseLocation {
     private int locationY;
     private Village village;
     private Dungeon dungeon;
+    private Hero hero;
 
     private void generateVillage() {
         if (BaseGenerator.getInstance().eventRarityGenerator() == 1) {
@@ -25,6 +27,26 @@ public class BaseLocation {
         if (BaseGenerator.getInstance().eventRarityGenerator() == 1) {
             dungeon = new Dungeon();
         }
+    }
+
+    public void enterLocation(Hero hero) {
+        if (hero.getLevel() == this.requiredLevel) {
+            this.hero = hero;
+            hero.getLocation().removeHero();
+            hero.setLocation(this);
+            hero.setPlayerX(this.getLocationX());
+            hero.setPlayerY(this.getLocationY());
+        } else {
+            System.out.println("Your level is " + hero.getLevel() +
+                    ". Location required at least " + this.getRequiredLevel());
+        }
+    }
+    public Hero getHero() {
+        return hero;
+    }
+
+    public void setHero(Hero hero) {
+        this.hero = hero;
     }
 
     public String getName() {
@@ -89,5 +111,9 @@ public class BaseLocation {
 
     public void setDungeon(Dungeon dungeon) {
         this.dungeon = dungeon;
+    }
+
+    public void removeHero() {
+        this.hero = null;
     }
 }

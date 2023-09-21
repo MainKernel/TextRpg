@@ -40,26 +40,26 @@ public abstract class Hero {
             setArmor(eagleEyeCamouflage);
         }
     }
-    int playerX = 0;
-    int playerY = 0;
-    String name;
-    int level = 1;
-    int experience;
-    int experienceForNextLvl = 80;
-    int maxHealth = 100;
-    int health = 100;
-    double protection;
-    int strength;
-    int dexterity;
-    int intelligence;
-    List<Item> inventory = new ArrayList<>();
-    Weapon weapon;
-    Armor armor;
-    List<Skills> skills;
-    Money money;
-    HeroType heroType;
-    int damage;
-    BaseLocation location;
+    private int playerX = 0;
+    private int playerY = 0;
+    private String name;
+    private int level = 1;
+    private int experience;
+    private int experienceForNextLvl = 80;
+    private int maxHealth = 100;
+    private int health = 100;
+    private double protection;
+    private int strength;
+    private int dexterity;
+    private int intelligence;
+    private List<Item> inventory = new ArrayList<>();
+    private Weapon weapon;
+    private Armor armor;
+    private List<Skills> skills;
+    private Money money;
+    private HeroType heroType;
+    private int damage;
+    private BaseLocation location;
 
 
 
@@ -187,6 +187,22 @@ public abstract class Hero {
         } else {
             return 0;
         }
+    }
+
+    public int getPlayerX() {
+        return playerX;
+    }
+
+    public void setPlayerX(int playerX) {
+        this.playerX = playerX;
+    }
+
+    public int getPlayerY() {
+        return playerY;
+    }
+
+    public void setPlayerY(int playerY) {
+        this.playerY = playerY;
     }
 
     public void removeItem(Item item) {

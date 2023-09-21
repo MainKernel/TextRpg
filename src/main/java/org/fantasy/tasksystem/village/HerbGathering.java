@@ -22,19 +22,6 @@ public class HerbGathering extends BaseTask {
         setComplete(false);
     }
 
-    public static void main(String[] args) {
-        Samurai samurai = new Samurai();
-        samurai.addItem(new Shadowblade());
-        samurai.equipWeapon((Weapon) samurai.getInventory().get(0));
-        new HerbGathering().watchTask(samurai);
-    }
-
-    public void watchTask(Hero hero) {
-        setReward(new Reward().initLargeReward(hero));
-        System.out.println(this);
-    }
-
-
     @Override
     public void startTask(Hero hero) {
         //setReward
@@ -99,6 +86,6 @@ public class HerbGathering extends BaseTask {
         return getName() +
                 "\nTask Description: " + getTaskDescription() +
                 "\nCompleted: " + (isComplete() ? "Yes" : "No") +
-                "\nTask Reward: \n" + getReward().toString();
+                "\n\nTask Reward: \n" + getReward().toString();
     }
 }

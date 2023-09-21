@@ -63,9 +63,9 @@ public class Reward {
     public String toString() {
         return "money: " + money.toString() +
                 "\nreward: " + listReward() +
-                "\nheroExperience: " + heroExperience +
-                "\nweaponExperience: " + weaponExperience +
-                "\narmor experience: " + armourExperience;
+                "\nheroExperience: " + heroExperience + " xp"+
+                "\nweaponExperience: " + weaponExperience + " xp" +
+                "\narmor experience: " + armourExperience + " xp";
     }
 
     private String listReward() {
